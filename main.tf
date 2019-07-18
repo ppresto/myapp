@@ -13,3 +13,15 @@ module "instance_module" {
 output "IP Address" {
     value = "${module.instance_module.public_ip}"
 }
+  
+output "Private Key" {
+    value = "${module.instance_module.private_key_pem}"
+}
+
+output "Public Key" {
+    value = "${module.instance_module.public_key_pem}"
+}
+
+output "AWS Keypair Name" {
+    value = "${module.instance_module.name}"
+}
