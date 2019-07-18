@@ -10,18 +10,18 @@ module "instance_module" {
   namespace = "ppresto"
 }
 
-output "IP Address" {
+output "ip_address" {
     value = "${module.instance_module.public_ip}"
 }
   
-output "Private Key" {
+output "private_key" {
     value = "${module.instance_module.private_key_pem}"
 }
 
-output "Public Key" {
+output "public_key" {
     value = "${module.instance_module.public_key_pem}"
 }
 
-output "AWS Keypair Name" {
+output "AWS_keypair_name" {
     value = "${module.instance_module.name}"
 }
