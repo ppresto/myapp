@@ -11,3 +11,7 @@ module "instance_module" {
   public = "true"
   region = "us-west-2"
 }
+
+output "IP Address" {
+    value = "${module.instance_module.public_ip}"
+}
