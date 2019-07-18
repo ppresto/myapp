@@ -2,7 +2,7 @@
 // Modules
 module "instance_module" {
   source  = "app.terraform.io/ppresto_ptfe/instance-module/aws"
-  version = "1.0.4"
+  version = "1.0.5"
 
   egress_cidr_block = "0.0.0.0/0"
   ingress_cidr_block = "157.131.174.226/32"
@@ -22,6 +22,6 @@ output "public_key" {
     value = "${module.instance_module.public_key_pem}"
 }
 
-output "AWS_keypair_name" {
-    value = "${module.instance_module.name}"
+output "aws_keypair_name" {
+    value = "${module.instance_module.aws_keypair_name}"
 }
