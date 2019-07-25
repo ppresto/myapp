@@ -5,5 +5,5 @@ module "compute_instance" {
   version = "0.1.4"
 
   count = 3
-  name_prefix = "ppdev"
+  name_prefix = "myapp-dev"
 }
