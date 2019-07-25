@@ -5,4 +5,5 @@ module "compute_instance" {
   version = "0.1.4"
 
   count = 1
+  name_prefix = "${var.name_prefix}"
 }
