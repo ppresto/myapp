@@ -1,7 +1,7 @@
 //--------------------------------------------------------------------
 // Modules
 module "instance_module" {
-  source  = "app.terraform.io/ppresto_ptfe/instance-module/aws"
+  source  = "app.terraform.io/Patrick/instance-module/aws"
   version = "1.2"
 
   egress_cidr_block  = "0.0.0.0/0"
