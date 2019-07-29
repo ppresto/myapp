@@ -1,10 +1,10 @@
 //--------------------------------------------------------------------
 // Modules
-module "azure_instance" {
-  source  = "app.terraform.io/Patrick/azure_instance/azure"
-  version = "1.0"
+module "instance" {
+  source  = "app.terraform.io/Patrick/aws_instance/aws"
+  version = "1.5"
 
-  count_linux   = 1
-  count_windows = 1
-  dns_prefix    = "ppresto-myazurewinhost"
+  count              = 1
+  ingress_cidr_block = "157.131.174.226/32"
+  name_prefix        = "ppresto-myawsubuntu1"
 }
