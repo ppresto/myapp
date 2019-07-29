@@ -5,9 +5,9 @@ module "ecs_fargate" {
   version = "0.4.3"
 
   alb_ingress_cidrblock = "57.131.174.226/32"
-  app_count             = 2
+  app_count             = 3
   app_image             = "nginxdemos/hello"
-  app_port              = 8080
+  app_port              = 80
   name_prefix           = "pp-myapp-ecs"
 }
 
