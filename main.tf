@@ -8,18 +8,18 @@ module "aws_instance" {
   name_prefix        = "ppresto-t1"
 
   output "ip_address" {
-    value = "${module.instance_module.public_ip}"
+    value = "${module.aws_instance.public_ip}"
   }
 
   output "private_key" {
-    value = "${module.instance_module.private_key_pem}"
+    value = "${module.aws_instance.private_key_pem}"
   }
 
   output "public_key" {
-    value = "${module.instance_module.public_key_pem}"
+    value = "${module.aws_instance.public_key_pem}"
   }
 
   output "aws_keypair_name" {
-    value = "${module.instance_module.aws_keypair_name}"
+    value = "${module.aws_instance.aws_keypair_name}"
   }
 }
