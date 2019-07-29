@@ -6,7 +6,7 @@ module "aws_instance" {
 
   ingress_cidr_block = "157.131.174.226/32"
   name_prefix        = "ppresto-t2"
-  instance_type      = "t3.large"
+  instance_type      = "t2.micro"
 }
 
 output "ip_address" {
