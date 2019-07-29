@@ -4,9 +4,10 @@ module "aws_instance" {
   source  = "app.terraform.io/Patrick/aws_instance/aws"
   version = "1.5"
 
-  count         = 1
-  instance_type = "t2.small"
-  name_prefix   = "myapp-pp"
+  count              = 1
+  instance_type      = "t2.small"
+  name_prefix        = "myapp-pp"
+  ingress_cidr_block = "157.131.174.226/32"
 }
 
 output "ip_address" {
