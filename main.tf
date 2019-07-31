@@ -1,14 +1,12 @@
 //--------------------------------------------------------------------
 // Modules
 module "aws_instance" {
-  source  = "app.terraform.io/Patrick/aws_instance/aws"
-  version = "1.5"
-
-  ingress_cidr_block = "157.131.174.226/32"
-  #ingress_cidr_block = "0.0.0.0/0"
-  #name_prefix   = "presto-myapp-dev"
+  source        = "app.terraform.io/Patrick/aws_instance/aws"
+  version       = "1.5"
   name_prefix   = "${var.name_prefix}"
-  instance_type = "t2.micro"
+  instance_type = "${var.instance_type}"
+  #ingress_cidr_block = "0.0.0.0/0"
+  ingress_cidr_block = "${var.ingress_cidr_block}"
 }
 
 output "ip_address" {
