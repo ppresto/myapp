@@ -1,11 +1,10 @@
 //--------------------------------------------------------------------
 // Modules
 module "aws_instance" {
-  source        = "app.terraform.io/Patrick/aws_instance/aws"
-  version       = "1.5"
-  name_prefix   = "${var.name_prefix}"
-  instance_type = "${var.instance_type}"
-  #ingress_cidr_block = "0.0.0.0/0"
+  source             = "app.terraform.io/Patrick/aws_instance/aws"
+  version            = "1.5"
+  name_prefix        = "${var.name_prefix}"
+  instance_type      = "${var.instance_type}"
   ingress_cidr_block = "${var.ingress_cidr_block}"
 }
 
