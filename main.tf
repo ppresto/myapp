@@ -6,7 +6,7 @@ module "aws_instance" {
 
   ingress_cidr_block = "157.131.174.226/32"
   #ingress_cidr_block = "0.0.0.0/0"
-  name_prefix   = "presto-myapp-dev"
+  #name_prefix   = "presto-myapp-dev"
   instance_type = "t2.micro"
 }
 
