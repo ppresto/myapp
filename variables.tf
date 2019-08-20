@@ -5,9 +5,9 @@ variable "name_prefix" {
 variable "instance_type" {
   description = "instance size (default: t2.micro)"
   type        = "string"
-  #default     = "t2.small"
+  default     = "t2.small"
   #default     = "t2.micro"
-  default     = "t3.large"
+  #default     = "t3.large"
 }
 
 variable "ingress_cidr_block" {
