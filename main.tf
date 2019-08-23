@@ -8,6 +8,11 @@ module "aws_instance" {
   ingress_cidr_block = "${var.ingress_cidr_block}"
 }
 
+module "compute_instance" {
+  source  = "app.terraform.io/Patrick/compute-instance/google"
+  version = "0.1.4"
+}
+
 output "ip_address" {
   value = "${module.aws_instance.public_ip}"
 }
