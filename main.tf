@@ -13,7 +13,11 @@ module "compute_instance" {
   version = "0.1.4"
 }
 
-output "ip_address" {
+output "GCP_Address" {
+  value = "${module.compute_instance.addresses}"
+}
+
+output "AWS_Address" {
   value = "${module.aws_instance.public_ip}"
 }
 
