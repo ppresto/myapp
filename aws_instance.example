@@ -8,7 +8,7 @@ module "aws_instance" {
   ingress_cidr_block = "${var.ingress_cidr_block}"
 }
 
-output "ip_address" {
+output "AWS_Address" {
   value = "${module.aws_instance.public_ip}"
 }
 

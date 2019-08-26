@@ -1,34 +1,15 @@
 //--------------------------------------------------------------------
 // Modules
-module "aws_instance" {
-  source             = "app.terraform.io/Patrick/aws_instance/aws"
-  version            = "1.5"
-  name_prefix        = "${var.name_prefix}"
-  instance_type      = "${var.instance_type}"
-  ingress_cidr_block = "${var.ingress_cidr_block}"
+module "ecs_fargate" {
+  source  = "app.terraform.io/Patrick/ecs-fargate/aws"
+  version = "0.4.4"
+
+  alb_ingress_cidrblock = "157.131.174.226/32"
+  app_image = "nginxdemos/hello:latest"
+  app_port = 8080
+  name_prefix = "calpoly"
 }
 
-module "compute_instance" {
-  source  = "app.terraform.io/Patrick/compute-instance/google"
-  version = "0.1.4"
-}
-
-output "GCP_Address" {
-  value = "${module.compute_instance.addresses}"
-}
-
-output "AWS_Address" {
-  value = "${module.aws_instance.public_ip}"
-}
-
-output "private_key" {
-  value = "${module.aws_instance.private_key_pem}"
-}
-
-output "public_key" {
-  value = "${module.aws_instance.public_key_pem}"
-}
-
-output "aws_keypair_name" {
-  value = "${module.aws_instance.aws_keypair_name}"
+output "ip_address" {
+  value = "${module.ecs_fargate.alb_hostname}"
 }
