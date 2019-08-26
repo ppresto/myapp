@@ -6,6 +6,7 @@ module "aws_instance" {
   name_prefix        = "${var.name_prefix}"
   instance_type      = "${var.instance_type}"
   ingress_cidr_block = "${var.ingress_cidr_block}"
+  region = "us-west-2"
 }
 
 module "compute_instance" {
