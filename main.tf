@@ -1,11 +1,14 @@
 //--------------------------------------------------------------------
 // Workspace Data
 data "terraform_remote_state" "patrick_tf_aws_standard_network" {
-  backend = "atlas"
-  config {
-    address = "app.terraform.io"
-    name    = "Patrick/tf-aws-standard-network"
-  }
+  backend "remote" {
+        hostname = "app.terraform.io"
+        organization = "Patrick"
+        
+        workspaces {
+            name = "tf-aws-standard-network"
+        }
+    }
 }
 
 //--------------------------------------------------------------------
