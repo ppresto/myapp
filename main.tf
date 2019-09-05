@@ -28,9 +28,9 @@ output "private_key_pem" {
 }
 
 output "my_nodes_public_ips" {
-  value = "${module.ec2_instance.public_ip}"
+  value = "${module.ec2_instance.my_nodes_public_ips}"
 }
 
 output "my_bastion_public_ips" {
-  value = "${module.ec2_instance.bastion_ips_public}"
+  value = "${module.ec2_instance.my_bastion_public_ips}"
 }
