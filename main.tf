@@ -16,5 +16,5 @@ module "ec2_instance" {
   
   name_prefix = "ppresto2-dev"
   vpc_id = "${data.terraform_remote_state.patrick_tf_aws_standard_network.vpc_id}"
-  count = 0
+  count = 1
 }
