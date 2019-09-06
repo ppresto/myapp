@@ -1,17 +1,11 @@
 //--------------------------------------------------------------------
-// Module - GCP Instances
-module "gce_instance" {
-  source  = "app.terraform.io/Patrick/gce_instance/google"
-  version = "0.1.4"
-}
-//--------------------------------------------------------------------
 // Module - AWS Instances
 module "ec2_instance" {
   source  = "app.terraform.io/Patrick/ec2_instance/aws"
   version = "0.1.5"
   name_prefix = "${var.name_prefix}"
   count = 1
-  instance_type = "t2.micro"
+  instance_type = "t3.large"
   subnet_id = "${data.terraform_remote_state.patrick_tf_aws_standard_network.subnet_private_ids[0]}"
 }
 
@@ -39,7 +33,3 @@ output "my_nodes_public_ips" {
 output "my_bastion_public_ips" {
   value = "${module.ec2_instance.my_bastion_public_ips}"
 }
-output "GCP_Address" {
-  value = "${module.gce_instance.addresses}"
-}
-

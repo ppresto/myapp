@@ -1,10 +1,4 @@
 //--------------------------------------------------------------------
-// Module - GCP Instances
-module "gce_instance" {
-  source  = "app.terraform.io/Patrick/gce_instance/google"
-  version = "0.1.4"
-}
-//--------------------------------------------------------------------
 // Module - AWS Instances
 module "ec2_instance" {
   source  = "app.terraform.io/Patrick/ec2_instance/aws"
@@ -38,7 +32,4 @@ output "my_nodes_public_ips" {
 }
 output "my_bastion_public_ips" {
   value = "${module.ec2_instance.my_bastion_public_ips}"
-}
-output "GCP_Address" {
-  value = "${module.gce_instance.addresses}"
 }
