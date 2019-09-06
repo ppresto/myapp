@@ -15,7 +15,7 @@ module "ec2_instance" {
   version = "0.1.5"
   
   name_prefix = "ppresto2-dev"
-  subnet_id = "${data.terraform_remote_state.patrick_tf_aws_standard_network.subnet_private_ids[0]}"
+  subnet_id = "${data.terraform_remote_state.patrick_tf_aws_standard_network.subnet_private_ids}"
   count = 0
 }
 
