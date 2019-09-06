@@ -21,4 +21,3 @@ output "AWS_Address" {
 output "aws_keypair_name" {
   value = "${module.ec2_instance.aws_keypair_name}"
 }
-
