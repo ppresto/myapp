@@ -9,7 +9,7 @@ module "gce_instance" {
 module "ec2_instance" {
   source  = "app.terraform.io/Patrick/ec2_instance/aws"
   version = "0.1.5"
-  
+  name_prefix = "${var.name_prefix}"
   count = 1
   instance_type = "t2.micro"
   subnet_id = "${data.terraform_remote_state.patrick_tf_aws_standard_network.subnet_private_ids[0]}"
