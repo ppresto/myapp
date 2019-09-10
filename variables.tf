@@ -15,3 +15,4 @@ variable "ingress_cidr_block" {
   default     = "157.131.174.226/32"
   #default     = "0.0.0.0/0"
 }
+
